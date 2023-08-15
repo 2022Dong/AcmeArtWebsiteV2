@@ -28,7 +28,7 @@
 
                 $statement = "SELECT * FROM paintings WHERE title = '$search_query'";
                 //Table
-                include_once('search_table.php');
+                include_once('components/search_table.php');
             }
             ?>
         </div>
