@@ -7,7 +7,7 @@
         include_once('components/bootstrap.php');
         ?>
         <!-- Title. -->
-        <title>Edit/Delete - AT2 Sprint 1</title>
+        <title>Edit/Delete - AT2 Sprint 2</title>
     </head>
     <body>
         <?php
@@ -21,6 +21,10 @@
             $origin = "select_all_edit_delete.php";
             //Calling Table
             include_once('components/display_paintings.php');
+            ?>
+            <!-- Footer. -->
+            <?php
+            include_once('components/footer.php');
             ?>
         </div>
     </body>

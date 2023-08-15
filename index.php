@@ -7,7 +7,7 @@
         include_once('components/bootstrap.php');
         ?>
         <!-- Title. -->
-        <title>Home - AT2 Sprint 1</title>
+        <title>Home - AT2 Sprint 2</title>
     </head>
     <body>
         <?php
@@ -37,19 +37,14 @@
                         <span class="visually-hidden">Next</span>
                     </button>
                 </div>
-            
-
-                <h2>AT2 Sprint 1 </h2>
-        
-
+                <h2>AT2 Sprint 2 </h2>
                 <p class="lead">
-                        Team name: <img src="images\logo.png" class="img-thumbnail" alt="logo" width="80" height="80"> King Rabbit<br>
-                        Team Leader: Derrick Choong<br>
-                        Team Member #1: Francis Sullivan<br>
-                        Team Member #2: Dongyun Huang<br>
+                    Team name: <img src="images\logo.png" class="img-thumbnail" alt="logo" width="100" height="100"> King Rabbit<br>
+                    Team Leader: Dongyun Huang<br>
+                    Team Member #1: Derrick Choong<br>
+                    Team Member #2: Francis Sullivan<br>
                 </p>
             </div>
-
             <?php
             include_once('components/footer.php');
             ?>

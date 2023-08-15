@@ -7,7 +7,7 @@
         include_once('components/bootstrap.php');
         ?>
         <!-- Title. -->
-        <title>Select All - AT2 Sprint 1</title>
+        <title>Select All - AT2 Sprint 2</title>
     </head>
     <body>
         <?php
@@ -20,6 +20,10 @@
             $statement = "SELECT * FROM paintings";
             //Table
             include_once('components/display_paintings.php');
+            ?>
+            <!-- Footer. -->
+            <?php
+            include_once('components/footer.php');
             ?>
         </div>
     </body>

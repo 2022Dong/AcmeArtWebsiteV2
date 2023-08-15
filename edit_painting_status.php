@@ -7,7 +7,7 @@
         include_once('bootstrap.php');
         ?>
         <!-- Title. -->
-        <title>Edit - AT2 Sprint 1</title>
+        <title>Edit - AT2 Sprint 2</title>
     </head>
     <body>
         <!-- Navbar. -->

@@ -7,7 +7,7 @@
         include_once('components/bootstrap.php');
         ?>
         <!-- Title. -->
-        <title>Search Painting Title</title>
+        <title>Search Painting Title - AT2 Sprint 2</title>
     </head>
     <body>
         <?php
@@ -28,7 +28,7 @@
 
                 $statement = "SELECT * FROM paintings WHERE title = '$search_query'";
                 //Table
-                include_once('components/search_table.php');
+                include_once('components/display_search_results.php');
             }
             ?>
         </div>

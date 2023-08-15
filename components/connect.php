@@ -2,7 +2,7 @@
 
 function connect() {
     $host = 'localhost';
-    $db = 'at2_sprint_1';
+    $db = 'at2_sprint_2';
     $user = 'root';
     $password = '';
     $dsn = "mysql:host=$host;dbname=$db;charset=UTF8";
