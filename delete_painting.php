@@ -23,6 +23,12 @@
             //Table
             include_once('components/display_paintings.php');
             ?>
+            <!-- Are you sure? --> 
+            <p class="lead">
+                Are you sure you want to delete this record?<br>
+            </p>
+            <a href="delete_painting_status.php?id=<?php echo $row['id']; ?>" class="btn btn-outline-danger" name="delete_button_yes">Yes</a>
+            <a href="delete_painting_status.php?id=not_applicable" class="btn btn-outline-primary" name="delete_button_no">No</a>
             <!-- Footer. -->
             <?php
             include_once('components/footer.php');

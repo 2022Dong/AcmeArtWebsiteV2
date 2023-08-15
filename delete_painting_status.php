@@ -4,7 +4,7 @@
     <head>
         <!-- Bootstrap call. --> 
         <?php
-        include_once('bootstrap.php');
+        include_once('components/bootstrap.php');
         ?>
         <!-- Title. -->
         <title>Delete - AT2 Sprint 2</title>
@@ -12,7 +12,7 @@
     <body>
         <!-- Navbar. -->
         <?php
-        include_once('navbar.php');
+        include_once('components/navbar.php');
         ?>
         <!-- Container. -->
         <div class="container-fluid">
@@ -44,7 +44,7 @@
             ?>
             <!-- Footer. -->
             <?php
-            include_once('footer.php');
+            include_once('components/footer.php');
             ?>
         </div>
     </body>
