@@ -15,7 +15,7 @@
         ?>
         <div class="container-fluid">
             <!-- Heading. -->
-            <h2>All Paintings</h2>
+            <h2>All Artists</h2>
             <?php
             $statement = "SELECT * FROM artists";
             //Table
