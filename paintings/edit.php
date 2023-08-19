@@ -17,7 +17,7 @@
 
         if (isset($_GET['id'])) {
             $id = $_GET['id'];
-            $sql = "SELECT * FROM paintings WHERE id = :id";
+            $sql = "SELECT * FROM paintings WHERE painting_id = :id";
             $stmt = connect()->prepare($sql);
             $stmt->bindParam(':id', $id);
 
@@ -27,7 +27,7 @@
                 if ($row) {
                     // Populate variables with fetched data
                     $title = isset($row['title']) ? $row['title'] : '';
-                    $artist = isset($row['artist']) ? $row['artist'] : '';
+                    $artist = isset($row['artist_name']) ? $row['artist_name'] : '';
                     $style = isset($row['style']) ? $row['style'] : '';
                     $media = isset($row['media']) ? $row['media'] : '';
                     $finished = isset($row['finished']) ? $row['finished'] : '';

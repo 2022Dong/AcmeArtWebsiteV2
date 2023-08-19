@@ -42,7 +42,7 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Paintings by Artist</a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <?php dynamic_dropdowns('artist', '../paintings/select_by_artist.php'); ?>
+                        <?php dynamic_dropdowns('artist_name', '../paintings/select_by_artist.php'); ?>
                     </ul>
                 </li>
                 <!-- Modify Database. -->

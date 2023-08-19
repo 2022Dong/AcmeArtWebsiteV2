@@ -18,7 +18,7 @@
             <h2>Delete Painting</h2>
             <?php
             $selection = $_GET['id'];
-            $statement = "SELECT * FROM paintings WHERE id = '$selection'";
+            $statement = "SELECT * FROM paintings WHERE painting_id = '$selection'";
             $origin = "delete_painting.php";
             //Table
             include_once('display.php');
@@ -27,7 +27,7 @@
             <p class="lead">
                 Are you sure you want to delete this record?<br>
             </p>
-            <a href="delete_status.php?id=<?php echo $row['id']; ?>" class="btn btn-outline-danger" name="delete_button_yes">Yes</a>
+            <a href="delete_status.php?id=<?php echo $row['painting_id']; ?>" class="btn btn-outline-danger" name="delete_button_yes">Yes</a>
             <a href="delete_status.php?id=not_applicable" class="btn btn-outline-primary" name="delete_button_no">No</a>
             <!-- Footer. -->
             <?php

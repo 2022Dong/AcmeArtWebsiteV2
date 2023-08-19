@@ -31,7 +31,7 @@
                     <?php
                 } else {
                     $id = $_GET['id'];
-                    $statement = "DELETE FROM paintings WHERE id = '$id'";
+                    $statement = "DELETE FROM paintings WHERE painting_id = '$id'";
                     $execute = (connect()->query($statement));
                     echo "Record was deleted successfully! :).";
                 }

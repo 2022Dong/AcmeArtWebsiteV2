@@ -24,9 +24,9 @@ $rows = $result->fetchAll(PDO::FETCH_ASSOC);
             ?>
             <tr>
                 <!-- Content. --> 
-                <td><?php echo $row['id']; ?></td>
+                <td><?php echo $row['painting_id']; ?></td>
                 <td><?php echo $row['title']; ?></td>
-                <td><?php echo $row['artist']; ?></td>
+                <td><?php echo $row['artist_name']; ?></td>
                 <td><?php echo $row['style']; ?></td>
                 <td><?php echo $row['media']; ?></td>
                 <td><?php echo $row['finished']; ?></td>
@@ -35,8 +35,8 @@ $rows = $result->fetchAll(PDO::FETCH_ASSOC);
                 if ($origin == "select_all_edit_delete.php") {
                     ?>
                     <td>
-                        <a href="edit.php?id=<?php echo $row['id']; ?>" class="btn btn-outline-primary" name="edit_button">Edit</a>
-                        <a href="delete.php?id=<?php echo $row['id']; ?>" class="btn btn-outline-danger" name="delete_button">Delete</a>
+                        <a href="edit.php?id=<?php echo $row['painting_id']; ?>" class="btn btn-outline-primary" name="edit_button">Edit</a>
+                        <a href="delete.php?id=<?php echo $row['painting_id']; ?>" class="btn btn-outline-danger" name="delete_button">Delete</a>
                     </td>
                     <?php
                 }

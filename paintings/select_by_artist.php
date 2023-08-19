@@ -20,7 +20,7 @@
             $selection = $_GET['TAG'];
             echo "You filtered for: <strong class='bold-text'>$selection</strong> <br>";
             echo "Result: ";
-            $statement = "SELECT * FROM paintings WHERE artist = '$selection'";
+            $statement = "SELECT * FROM paintings WHERE artist_name = '$selection'";
             //Table
             include_once('display.php');
             ?>
