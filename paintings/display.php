@@ -16,6 +16,13 @@ $rows = $result->fetchAll(PDO::FETCH_ASSOC);
             <th>Media</th>
             <th>Finished</th>
             <th>Image</th>
+            <?php
+            if (isset($origin) && $origin == "select_all_edit_delete.php"){
+                ?>
+                <th>Edit</th>
+                <?php
+            }
+            ?>
         </tr>
     </thead>
     <tbody>
@@ -32,7 +39,7 @@ $rows = $result->fetchAll(PDO::FETCH_ASSOC);
                 <td><?php echo $row['finished']; ?></td>
                 <td><?php echo '<img class="thumb" style="width: 100px;" src="data:image/png;base64,' . base64_encode($row['thumbnail']) . '"/>'; ?></td>
                 <?php
-                if ($origin == "select_all_edit_delete.php") {
+                if (isset($origin) && $origin == "select_all_edit_delete.php") {
                     ?>
                     <td>
                         <a href="edit.php?id=<?php echo $row['painting_id']; ?>" class="btn btn-outline-primary" name="edit_button">Edit</a>

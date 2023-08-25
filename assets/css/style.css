@@ -1,0 +1,72 @@
+/*--------------------------------------------------------------
+# Sub-Menu
+--------------------------------------------------------------*/
+
+.dropdown-menu li {
+position: relative;
+}
+
+.dropdown-menu .dropdown-submenu {
+display: none;
+position: absolute;
+left: 100%;
+top: -7px;
+}
+
+.dropdown-menu .dropdown-submenu-left {
+right: 100%;
+left: auto;
+}
+
+.dropdown-menu > li:hover > .dropdown-submenu {
+display: block;
+}
+
+@media (max-width: 991px) {
+    .dropdown-menu .dropdown-submenu {
+      display: none;
+      position: static;
+      left: auto;
+      top: auto;
+    }
+  }
+
+/*--------------------------------------------------------------
+# Search bar
+--------------------------------------------------------------*/
+#searchForm .input-group .dropdown-menu{
+  right: 0;
+  left: auto;  
+}
+
+@media (max-width: 991px) {
+  #searchForm .input-group {
+    padding-left: 0;
+    width: auto;
+  }
+
+  #searchForm .input-group .form-control{
+    max-width: 150px;
+  }
+
+  #searchForm .input-group .dropdown-menu{
+    position:absolute;
+  }
+}
+
+/*--------------------------------------------------------------
+# Placeholder Colour
+--------------------------------------------------------------*/
+
+.form-select{
+  border: 0;
+  text-align: left;
+  padding: 0;
+  background-image: none;
+}
+
+.form-select .dselect-placeholder{
+  color:#6C757D;
+}
+
+

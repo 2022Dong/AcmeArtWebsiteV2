@@ -51,7 +51,6 @@
             .narrow-column {
                 width: 180px; /* Adjust the width as per your preference */
             }
-            
         </style>
 
         <!-- Table -->
@@ -65,7 +64,7 @@
                         <tr>
                             <!-- Content. --> 
                             <td class="narrow-column-first"></td> <!-- Add an extra column before the img, get more white space --> 
-                            <td id="image" class="text-right narrow-column"> <!-- Add the class "text-right" and "narrow-column" -->                                
+                            <td class="text-right narrow-column"> <!-- Add the class "text-right" and "narrow-column" -->                                
                                 <?php echo '<img class="thumb" src="data:image/png;base64,' . base64_encode($row['full_pic']) . '"/>'; ?>
                             </td>
                             <td class="text-right narrow-column"> <!-- Add the class "text-right" and "narrow-column" -->
@@ -73,24 +72,22 @@
                                 <br>
                                 <br>
                                 <br>
-                                <p class="text-right">Painting Title</p>
-                                <p class="text-right">Finished</p>
-                                <p class="text-right">Paint Media</p>
-                                <p class="text-right">Artist Name</p>
-                                <p class="text-right">Style</p>
+                                <p class="text-right">Artist ID</p>
+                                <p class="text-right">Name</p>
+                                <p class="text-right">lifespan</p>
+                                <p class="text-right">Period</p>
+                                <p class="text-right">nationality</p>
                             </td>
                             <td>
                                 <br>
                                 <br>
                                 <br>
                                 <br>
-                                <p><?php echo $row['title']; ?></p>
-                                <p><?php echo $row['finished']; ?></p>
-                                <p><?php echo $row['media']; ?></p>
-                                <p><?php echo $row['artist_name']; ?>
-                                    <a href="artist_details.php?artist_id=<?php echo $row['artist_id']; ?>" class="btn btn-light">>> Find out more...</a>
-                                </p>                               
-                                <p><?php echo $row['style']; ?></p>
+                                <p><?php echo $row['artist_id']; ?></p>
+                                <p><?php echo $row['artist_name']; ?></p>
+                                <p><?php echo $row['lifespan']; ?></p>
+                                <p><?php echo $row['period']; ?></p>
+                                <p><?php echo $row['nationality']; ?></p>
                             </td>                
                         </tr>
                         <?php
