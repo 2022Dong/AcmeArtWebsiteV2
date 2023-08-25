@@ -33,6 +33,14 @@ $rows = $result->fetchAll(PDO::FETCH_ASSOC);
                             <strong>Period: </strong><?php echo $row['period']; ?><br>
                             <strong>Nationality: </strong><?php echo $row['nationality']; ?>
                         </p>
+                        <?php
+                        if (isset($origin) && $origin == "select_all_edit_delete.php") {
+                            ?>
+                            <a href="edit.php?id=<?php echo $row['artist_id']; ?>" class="btn btn-outline-primary mb-2" name="edit_button">Edit</a>
+                            <a href="delete.php?id=<?php echo $row['artist_id']; ?>" class="btn btn-outline-danger mb-2" name="delete_button">Delete</a>
+                            <?php
+                        }
+                        ?>
                     </div>
                 </div>
             </div>

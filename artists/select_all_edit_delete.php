@@ -7,7 +7,7 @@
         include_once('../components/bootstrap.php');
         ?>
         <!-- Title. -->
-        <title>Edit/Delete - AT2 Sprint 2</title>
+        <title>Edit/Delete Artist - AT2 Sprint 2</title>
     </head>
     <body>
         <?php
@@ -15,9 +15,9 @@
         ?>
         <div class="container-fluid">
             <!-- Heading. -->
-            <h2>Edit or Delete a Painting</h2>
+            <h2>Edit or Delete a Artist</h2>
             <?php
-            $statement = "SELECT p.*, a.artist_name FROM paintings p JOIN artists a ON p.artist_id = a.artist_id";
+            $statement = "SELECT * from artists";
             $origin = "select_all_edit_delete.php";
             //Calling Table
             include_once('display.php');

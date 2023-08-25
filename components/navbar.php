@@ -81,8 +81,8 @@
                         <li>
                             <a class="dropdown-item dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"> Artist </a>
                             <ul class="dropdown-menu dropdown-submenu">
-                                <li><a class="dropdown-item" href="#">Add New Artist</a></li>
-                                <li><a class="dropdown-item" href="#">Edit/Delete Artist</a></li>
+                                <li><a class="dropdown-item" href="../artists/add.php">Add New Artist</a></li>
+                                <li><a class="dropdown-item" href="../artists/select_all_edit_delete.php">Edit/Delete Artist</a></li>
                             </ul>
                         </li>
                         <li><a class="dropdown-item dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"> Painting </a>

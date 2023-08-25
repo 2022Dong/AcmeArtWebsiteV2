@@ -49,7 +49,7 @@
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="add_artist" style="width: 110px;">Artist</span>
                     <select id="select_box_1" name="add_artist" aria-label="artist" aria-describedby="add_artist" class="form-control">
-                        <option value=""> Select Artist </option>
+                        <option value=""> eg. 'Michelangelo' </option>
                         <?php dynamic_select_dropdowns('artist_id', "artist_name", 'artists'); ?>
                     </select>
                 </div>
