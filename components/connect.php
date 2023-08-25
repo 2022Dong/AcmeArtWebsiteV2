@@ -9,6 +9,6 @@ function connect() {
     try {
         return new PDO($dsn, $user, $password);
     } catch (PDOException $e) {
-        
+        echo "crash here $e";   
     }
 }

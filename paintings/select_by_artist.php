@@ -17,10 +17,20 @@
             <!-- Heading. -->
             <h2>Paintings by Artist</h2>
             <?php
+            include_once('../components/connect.php');
+            $db = connect();
+
             $selection = $_GET['TAG'];
             echo "You filtered for: <strong class='bold-text'>$selection</strong> <br>";
             echo "Result: ";
-            $statement = "SELECT * FROM paintings WHERE artist_name = '$selection'";
+
+            $selection = htmlspecialchars($selection);  // Sanitize the input
+            $selection = $db->quote($selection);  // Safely quote the string for use in a query
+
+            $statement = "SELECT p.*, a.artist_name FROM paintings p 
+                JOIN artists a ON p.artist_id = a.artist_id 
+                WHERE a.artist_name = $selection";
+            
             //Table
             include_once('display.php');
             ?>

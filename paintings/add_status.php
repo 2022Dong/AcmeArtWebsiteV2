@@ -46,8 +46,7 @@
                             return;
                         }
                     }
-                    $statement_1 = 
-                    $statement_2 = "INSERT INTO paintings (title, artist_id, style, media, finished, thumbnail, full_pic) VALUES ('$title', '$artist', '$style', '$media', '$finished', '$thumbnail', '$full_pic')";
+                    $statement = "INSERT INTO paintings (title, artist_id, style, media, finished, thumbnail, full_pic) VALUES ('$title', '$artist', '$style', '$media', '$finished', '$thumbnail', '$full_pic')";
                     $execute = (connect()->query($statement));
                     echo "Record was added successfully! :).";
                 }

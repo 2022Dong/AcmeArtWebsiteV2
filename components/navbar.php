@@ -50,7 +50,7 @@
                         </li>
                         <li><a class="dropdown-item dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"> By Artist </a>
                             <ul class="dropdown-menu dropdown-submenu">
-                                <?php dynamic_dropdowns('artist_name', '../paintings/select_by_artist.php', 'paintings'); ?>
+                                <?php dynamic_dropdowns('artist_name', '../paintings/select_by_artist.php', 'artists'); ?>
                             </ul>
                         </li>
                     </ul>

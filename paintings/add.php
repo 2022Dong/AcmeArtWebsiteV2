@@ -33,14 +33,16 @@
                 <?php
                 include_once('../components/connect.php');
 
-                function dynamic_select_dropdowns($column, $webpage, $table) {
-                    $statement = "SELECT DISTINCT $column FROM $table";
-                    $result = (connect()->query($statement));
+                function dynamic_select_dropdowns($column1, $column2, $table) {
+                    // Modify the statement to select both columns
+                    $statement = "SELECT DISTINCT $column1, $column2 FROM $table";
+                    $result = connect()->query($statement);
                     $rows = $result->fetchAll(PDO::FETCH_ASSOC);
                     foreach ($rows as $row) {
-                        echo '<option value="'.$row["$column"].'">'.$row["$column"].'</option>';
-                        }
-                    }                  
+                        // Use the artist_id as the value, and display both the artist_id and artist_name for user visibility
+                        echo '<option value="' . $row[$column1] . '">' . $row[$column1] . ': ' . $row[$column2] . '</option>';
+                    }
+                }
                 ?>
                 
                 <!-- artist. -->
@@ -48,17 +50,15 @@
                     <span class="input-group-text" id="add_artist" style="width: 110px;">Artist</span>
                     <select id="select_box_1" name="add_artist" aria-label="artist" aria-describedby="add_artist" class="form-control">
                         <option value=""> Select Artist </option>
-                        <?php dynamic_select_dropdowns('artist_name', '../paintings/select_by_artist.php', 'paintings'); ?>
+                        <?php dynamic_select_dropdowns('artist_id', "artist_name", 'artists'); ?>
                     </select>
                 </div>
+                
 
                 <!-- style. -->
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="add_style" style="width: 110px;">Style</span>
-                    <select id="select_box_2" name="add_style" aria-label="style" aria-describedby="add_style" class="form-control">
-                        <option value=""> Select Style </option>
-                        <?php dynamic_select_dropdowns('style', '../paintings/select_by_style.php', 'paintings'); ?>
-                    </select>
+                    <input type="text" class="form-control" placeholder="e.g. 'Portrait'" aria-label="style" aria-describedby="add_style" name="add_style">
                 </div>
 
                 <!-- media. -->
@@ -83,7 +83,7 @@
                 </div>
                 <!-- Save. -->
                 <div class="d-grid gap-2 col-6 mx-auto">
-                    <button class="btn btn-success" type="submit" name="submit_button" onclick="updateHiddenInputsAndSubmitForm()">Submit</button>
+                    <button class="btn btn-success" type="submit" name="submit_button">Submit</button>
                 </div>
             </form>
             <!-- Footer. -->

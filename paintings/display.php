@@ -15,7 +15,7 @@ $rows = $result->fetchAll(PDO::FETCH_ASSOC);
                 <div class="card"> 
                     <div class="d-flex justify-content-center align-items-center" style="height: 300px;">
                         <a href="../paintings/select_by_search.php?query=<?php echo urlencode($row['title']); ?>">
-                            <img class="card-img-top" style="max-width: 100%; max-height: 300px; object-fit: cover;" src="data:image/png;base64,<?php echo base64_encode($row['full_pic']); ?>" alt="Painting Image">
+                            <img class="card-img-top" style="max-width: 100%; max-height: 300px; object-fit: cover;" src="data:image/gif;base64,<?php echo base64_encode($row['full_pic']); ?>" alt="Painting Image">
                         </a>
                     </div>  
                                       
