@@ -18,7 +18,7 @@
         <!-- Container. -->
         <div class="container-fluid">
             <!-- Heading. -->
-            <h2>Add New Painting: </h2>
+            <h2>Add New Artist: </h2>
             <!-- Form. -->
             <!-- Source: https://www.w3schools.com/TAGs/att_form_enctype.asp -->
             <form action="add_status.php" method="post" enctype="multipart/form-data">
@@ -34,7 +34,7 @@
                 </div>
                 <!-- period. -->
                 <div class="input-group mb-3">
-                    <span class="input-group-text" id="add_period" style="width: 110px;">Media</span>
+                    <span class="input-group-text" id="add_period" style="width: 110px;">Period</span>
                     <input type="text" class="form-control" placeholder="e.g. '19th'" aria-label="period" aria-describedby="add_period" name="add_period">
                 </div>
                 <!-- period. -->

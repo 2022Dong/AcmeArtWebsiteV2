@@ -33,7 +33,7 @@
                     $media = $_POST["add_media"] ? $_POST["add_media"] : '';
                     $finished = $_POST["add_finished"] ? $_POST["add_finished"] : '';
                     if ((empty($_FILES['add_thumbnail']['tmp_name'])) && (empty($_FILES['add_full_pic']['tmp_name']))) {
-                        $statement = "UPDATE paintings SET title = '$title', artist_name = '$artist', style = '$style', media = '$media', finished = '$finished' WHERE painting_id = '$id'";
+                        $statement = "UPDATE paintings SET title = '$title', artist_id = '$artist', style = '$style', media = '$media', finished = '$finished' WHERE painting_id = '$id'";
                     }
                     if ((!empty($_FILES['add_thumbnail']['tmp_name'])) && (empty($_FILES['add_full_pic']['tmp_name']))) {
                         // Gives the user feedback if the size of an image they trying to upload is too large.
@@ -45,7 +45,7 @@
                             return;
                         }
                         $thumbnail = $_FILES['add_thumbnail']['tmp_name'] ? addslashes(file_get_contents($_FILES['add_thumbnail']['tmp_name'])) : '';
-                        $statement = "UPDATE paintings SET title = '$title', artist_name = '$artist', style = '$style', media = '$media', finished = '$finished', thumbnail = '$thumbnail' WHERE painting_id = '$id'";
+                        $statement = "UPDATE paintings SET title = '$title', artist_id = '$artist', style = '$style', media = '$media', finished = '$finished', thumbnail = '$thumbnail' WHERE painting_id = '$id'";
                     }
                     if ((empty($_FILES['add_thumbnail']['tmp_name'])) && (!empty($_FILES['add_full_pic']['tmp_name']))) {
                         // Gives the user feedback if the size of an image they trying to upload is too large.
@@ -57,7 +57,7 @@
                             return;
                         }
                         $full_pic = $_FILES['add_full_pic']['tmp_name'] ? addslashes(file_get_contents($_FILES['add_full_pic']['tmp_name'])) : '';
-                        $statement = "UPDATE paintings SET title = '$title', artist_name = '$artist', style = '$style', media = '$media', finished = '$finished', full_pic = '$full_pic' WHERE painting_id = '$id'";
+                        $statement = "UPDATE paintings SET title = '$title', artist_id = '$artist', style = '$style', media = '$media', finished = '$finished', full_pic = '$full_pic' WHERE painting_id = '$id'";
                     }
                     if ((!empty($_FILES['add_thumbnail']['tmp_name'])) && (!empty($_FILES['add_full_pic']['tmp_name']))) {
                         // Gives the user feedback if the size of an image they trying to upload is too large.
@@ -70,7 +70,7 @@
                         }
                         $thumbnail = $_FILES['add_thumbnail']['tmp_name'] ? addslashes(file_get_contents($_FILES['add_thumbnail']['tmp_name'])) : '';
                         $full_pic = $_FILES['add_full_pic']['tmp_name'] ? addslashes(file_get_contents($_FILES['add_full_pic']['tmp_name'])) : '';
-                        $statement = "UPDATE paintings SET title = '$title', artist_name = '$artist', style = '$style', media = '$media', finished = '$finished', thumbnail = '$thumbnail', full_pic = '$full_pic' WHERE painting_id = '$id'";
+                        $statement = "UPDATE paintings SET title = '$title', artist_id = '$artist', style = '$style', media = '$media', finished = '$finished', thumbnail = '$thumbnail', full_pic = '$full_pic' WHERE painting_id = '$id'";
                     }
                     $execute = (connect()->query($statement));
                     echo "Record was updated successfully! :).";

@@ -29,7 +29,7 @@
 
                 $search_query = htmlspecialchars($search_query);  // Sanitize the input
                 $search_query = $db->quote($search_query);  // Safely quote the string for use in a query
-
+                    
                 $statement = "SELECT p.*, a.artist_name FROM paintings p 
                 JOIN artists a ON p.artist_id = a.artist_id 
                 WHERE p.title = $search_query";

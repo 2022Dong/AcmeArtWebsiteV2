@@ -53,11 +53,31 @@
                     <span class="input-group-text" id="add_title" style="width: 110px;">Title</span>
                     <input type="text" class="form-control" placeholder="title" aria-label="title" aria-describedby="add_title" name="add_title" value="<?php echo $title; ?>">
                 </div>
+
+                <?php
+                include_once('../components/connect.php');
+
+                function dynamic_select_dropdowns($column1, $column2, $table) {
+                    // Modify the statement to select both columns
+                    $statement = "SELECT DISTINCT $column1, $column2 FROM $table";
+                    $result = connect()->query($statement);
+                    $rows = $result->fetchAll(PDO::FETCH_ASSOC);
+                    foreach ($rows as $row) {
+                        // Use the artist_id as the value, and display both the artist_id and artist_name for user visibility
+                        echo '<option value="' . $row[$column1] . '">' . $row[$column1] . ': ' . $row[$column2] . '</option>';
+                    }
+                }
+                ?>
+                
                 <!-- artist. -->
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="add_artist" style="width: 110px;">Artist</span>
-                    <input type="text" class="form-control" placeholder="artist" aria-label="artist" aria-describedby="add_artist" name="add_artist" value="<?php echo $artist; ?>">
+                    <select id="select_box_1" name="add_artist" aria-label="artist" aria-describedby="add_artist" class="form-control">
+                        <option value=""> eg. 'Michelangelo' </option>
+                        <?php dynamic_select_dropdowns('artist_id', "artist_name", 'artists'); ?>
+                    </select>
                 </div>
+
                 <!-- style. -->
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="add_style" style="width: 110px;">Style</span>
