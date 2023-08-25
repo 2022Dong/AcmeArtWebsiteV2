@@ -5,33 +5,40 @@ $result = (connect()->query($statement));
 $rows = $result->fetchAll(PDO::FETCH_ASSOC);
 ?>
 <!-- Table. --> 
-<table class="table">
-    <thead>
-        <tr>
-            <!-- Headers. --> 
-            <th>Artist ID</th>
-            <th>Artist Name</th>
-            <th>Lifespan</th>
-            <th>Period</th>
-            <th>Nationality</th>
-            <th>Image</th>
-        </tr>
-    </thead>
-    <tbody>
+<!-- Connect. -->
+<?php
+include_once('../components/connect.php');
+$result = (connect()->query($statement));
+$rows = $result->fetchAll(PDO::FETCH_ASSOC);
+?>
+<!-- Gallery. --> 
+<div class="container my-5">
+    <div class="row">
         <?php
         foreach ($rows as $row) {
             ?>
-            <tr>
-                <!-- Content. --> 
-                <td><?php echo $row['artist_id']; ?></td>
-                <td><?php echo $row['artist_name']; ?></td>
-                <td><?php echo $row['lifespan']; ?></td>
-                <td><?php echo $row['period']; ?></td>
-                <td><?php echo $row['nationality']; ?></td>
-                <td><?php echo '<img class="thumb" style="width: 100px;" src="data:image/png;base64,' . base64_encode($row['thumbnail']) . '"/>'; ?></td>
-            </tr>
+            <!-- Start of Artist Item -->
+            <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-4">
+                <div class="card">
+                    <div class="d-flex justify-content-center align-items-center" style="height: 300px;">
+                        <a href="../artists/artist_details.php?artist_id=<?php echo $row['artist_id']; ?>">
+                        <img class="card-img-top" style="max-width: 100%; max-height: 300px; object-fit: cover;" src="data:image/png;base64,<?php echo base64_encode($row['full_pic']); ?>" alt="Artist Image">
+                        </a>
+                    </div> 
+                    
+                    <div class="card-body">
+                        <h5 class="card-title text-center"><?php echo $row['artist_name']; ?></h5>
+                        <p class="card-text">
+                            <strong>Lifespan: </strong><?php echo $row['lifespan']; ?><br>
+                            <strong>Period: </strong><?php echo $row['period']; ?><br>
+                            <strong>Nationality: </strong><?php echo $row['nationality']; ?>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- End of Artist Item -->
             <?php
         }
         ?>
-    </tbody>
-</table>
+    </div>
+</div>
