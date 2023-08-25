@@ -5,52 +5,39 @@ $result = (connect()->query($statement));
 $rows = $result->fetchAll(PDO::FETCH_ASSOC);
 ?>
 <!-- Table. --> 
-<table class="table">
-    <thead>
-        <tr>
-            <!-- Headers. --> 
-            <th>ID</th>
-            <th>Painting Title</th>
-            <th>Artist</th>
-            <th>Style</th>
-            <th>Media</th>
-            <th>Finished</th>
-            <th>Image</th>
-            <?php
-            if (isset($origin) && $origin == "select_all_edit_delete.php"){
-                ?>
-                <th>Edit</th>
-                <?php
-            }
-            ?>
-        </tr>
-    </thead>
-    <tbody>
+<div class="container my-5">
+    <div class="row">
         <?php
         foreach ($rows as $row) {
             ?>
-            <tr>
-                <!-- Content. --> 
-                <td><?php echo $row['painting_id']; ?></td>
-                <td><?php echo $row['title']; ?></td>
-                <td><?php echo $row['artist_name']; ?></td>
-                <td><?php echo $row['style']; ?></td>
-                <td><?php echo $row['media']; ?></td>
-                <td><?php echo $row['finished']; ?></td>
-                <td><?php echo '<img class="thumb" style="width: 100px;" src="data:image/png;base64,' . base64_encode($row['thumbnail']) . '"/>'; ?></td>
-                <?php
-                if (isset($origin) && $origin == "select_all_edit_delete.php") {
-                    ?>
-                    <td>
-                        <a href="edit.php?id=<?php echo $row['painting_id']; ?>" class="btn btn-outline-primary" name="edit_button">Edit</a>
-                        <a href="delete.php?id=<?php echo $row['painting_id']; ?>" class="btn btn-outline-danger" name="delete_button">Delete</a>
-                    </td>
-                    <?php
-                }
-                ?>
-            </tr>
+            <!-- Start of Gallery Item -->
+            <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-4">
+                <div class="card"> 
+                    <div class="d-flex justify-content-center align-items-center" style="height: 300px;">
+                        <a href="../paintings/display_search_results.php?query=<?php echo $row['title']; ?>">
+                            <img class="card-img-top" style="width: 100%; height: 100%; object-fit: cover;" src="data:image/png;base64,<?php echo base64_encode($row['full_pic']); ?>" alt="Painting Image">
+                        </a>
+                    </div>                  
+                    <div class="card-body">
+                        <h5 class="card-title"> <?php echo $row['title']; ?></h5>
+                        <p><class="card-text"><strong>Artist: </strong> <?php echo $row['artist_name']; ?><br>
+                        <class="card-text"><strong>Style: </strong> <?php echo $row['style']; ?><br>
+                        <class="card-text"><strong>Media: </strong> <?php echo $row['media']; ?><br>
+                        <class="card-text"><strong>Finished: </strong> <?php echo $row['finished']; ?></p>
+                        <?php
+                        if (isset($origin) && $origin == "select_all_edit_delete.php") {
+                            ?>
+                            <a href="edit.php?id=<?php echo $row['painting_id']; ?>" class="btn btn-outline-primary mb-2" name="edit_button">Edit</a>
+                            <a href="delete.php?id=<?php echo $row['painting_id']; ?>" class="btn btn-outline-danger mb-2" name="delete_button">Delete</a>
+                            <?php
+                        }
+                        ?>
+                    </div>
+                </div>
+            </div>
+            <!-- End of Gallery Item -->
             <?php
         }
         ?>
-    </tbody>
-</table>
+    </div>
+</div>

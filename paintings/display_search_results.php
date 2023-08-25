@@ -87,8 +87,8 @@
                                 <p><?php echo $row['title']; ?></p>
                                 <p><?php echo $row['finished']; ?></p>
                                 <p><?php echo $row['media']; ?></p>
-                                <p><?php echo $row['artist_name']; ?>
-                                    <a href="artist_details.php?artist_id=<?php echo $row['artist_id']; ?>" class="btn btn-light">>> Find out more...</a>
+                                <p> <a href="../artists/artist_details.php?artist_id=<?php echo $row['artist_id']; ?>" id="artist_link" class="btn btn-link"><?php echo $row['artist_name']; ?>
+                                    </a>
                                 </p>                               
                                 <p><?php echo $row['style']; ?></p>
                             </td>                
