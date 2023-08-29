@@ -17,7 +17,7 @@
 
         if (isset($_GET['id'])) {
             $id = $_GET['id'];
-            $sql = "SELECT * FROM paintings WHERE painting_id = :id";
+            $sql = "SELECT p.*, a.artist_name FROM paintings p JOIN artists a ON p.artist_id = a.artist_id WHERE painting_id = :id";
             $stmt = connect()->prepare($sql);
             $stmt->bindParam(':id', $id);
 
@@ -27,7 +27,8 @@
                 if ($row) {
                     // Populate variables with fetched data
                     $title = isset($row['title']) ? $row['title'] : '';
-                    $artist = isset($row['artist_name']) ? $row['artist_name'] : '';
+                    $artist_id = isset($row['artist_id']) ? $row['artist_id'] : '';
+                    $artist_name = isset($row['artist_name']) ? $row['artist_name'] : '';
                     $style = isset($row['style']) ? $row['style'] : '';
                     $media = isset($row['media']) ? $row['media'] : '';
                     $finished = isset($row['finished']) ? $row['finished'] : '';
@@ -73,7 +74,7 @@
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="add_artist" style="width: 110px;">Artist</span>
                     <select id="select_box_1" name="add_artist" aria-label="artist" aria-describedby="add_artist" class="form-control">
-                        <option value=""> eg. 'Michelangelo' </option>
+                        <option value="<?php echo $artist_id; ?>"> <?php echo $artist_id; ?>: <?php echo $artist_name; ?> </option>
                         <?php dynamic_select_dropdowns('artist_id', "artist_name", 'artists'); ?>
                     </select>
                 </div>

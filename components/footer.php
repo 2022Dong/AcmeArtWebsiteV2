@@ -1,3 +1,3 @@
 <footer>
-    <p class="copyright">© 2023 King Rabbit.</p>
+    <p class="copyright text-center">© 2023 King Rabbit.</p>
 </footer>

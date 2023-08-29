@@ -5,10 +5,6 @@
     include_once('../components/connect.php');
     $result = (connect()->query($statement));
     $rows = $result->fetchAll(PDO::FETCH_ASSOC);
-    // Returns not found result.
-    if ($result->rowCount() == 0) {
-        echo "<b>Artist not found";
-    }
     ?>
     <body>
         <!--CSS styling--> 

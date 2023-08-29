@@ -5,10 +5,6 @@
     include_once('../components/connect.php');
     $result = (connect()->query($statement));
     $rows = $result->fetchAll(PDO::FETCH_ASSOC);
-    // Returns not found result.
-    if ($result->rowCount() == 0) {
-        echo "<b>Painting not found";
-    }
     ?>
     <body>
         <!--CSS styling--> 
@@ -55,7 +51,7 @@
             .narrow-column {
                 width: 180px; /* Adjust the width as per your preference */
             }
-
+            
         </style>
 
         <!-- Table -->

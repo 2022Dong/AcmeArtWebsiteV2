@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-yellow-green bg-yellow-green">
+<nav class="navbar navbar-expand-lg">
     <div class="container-fluid">
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -7,7 +7,7 @@
             <ul class="navbar-nav">
                 <!-- Home Page. -->
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="../static/home.php">Home</a>
+                    <a class="nav-link" aria-current="page" href="../static/home.php">Home</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Show All</a>
@@ -108,7 +108,7 @@
 
                     <!-- Using div instead of ul for input-group-append -->
                     <div class="input-group-append">
-                        <button class="btn btn-outline-success dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Search</button>
+                        <button class="btn btn-outline-success dropdown-toggle" style="color:white;" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Search</button>
                         
                         <div class="dropdown-menu">
                             <!-- Option to search in paintings -->
