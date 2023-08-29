@@ -92,6 +92,7 @@
                                 <p><?php echo $row['lifespan']; ?></p>
                                 <p><?php echo $row['period']; ?></p>
                                 <p><?php echo $row['nationality']; ?></p>
+                                <a href="../paintings/select_by_artist.php?TAG=<?php echo $row['artist_name']; ?>" id="artist_link" class="btn btn-link">See paintings by this artist</a>
                             </td>                
                         </tr>
                         <?php

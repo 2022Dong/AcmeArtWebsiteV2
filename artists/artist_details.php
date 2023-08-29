@@ -110,6 +110,7 @@
                                 <p><?php echo $artist['lifespan']; ?></p>
                                 <p><?php echo $artist['period']; ?></p>
                                 <p><?php echo $artist['nationality']; ?></p>
+                                <a href="../paintings/select_by_artist.php?TAG=<?php echo $artist['artist_name']; ?>" id="artist_link" class="btn btn-link">See paintings by this artist</a>
                             </td>                
                         </tr>
                     </tbody>
